@@ -1,0 +1,71 @@
+/**
+ * Catálogo das fotos do Unsplash usadas no site.
+ * Cada identificador foi verificado (HTTP 200) e conferido visualmente.
+ */
+export const PHOTOS = {
+  // Arquitetura — exteriores
+  whiteSculpture: "1487958449943-2429e8be8625",
+  monoTowers: "1511818966892-d7d671e672a2",
+  terracottaCurves: "1486718448742-163732cd1544",
+  houseDusk: "1494526585095-c41746248156",
+  modernHouseDusk: "1600585154340-be6161a56a0c",
+  whiteHousePool: "1600596542815-ffad4c1539a9",
+  timberHouse: "1600566753190-17f0baa2a6c3",
+  whiteBalconies: "1459767129954-1b1c1f9b9ace",
+  goldenGlass: "1431576901776-e539bd916ba2",
+  blueFacade: "1448630360428-65456885c650",
+  poolTerrace: "1512917774080-9991f1c4c750",
+  minimalWhiteHouse: "1523217582562-09d0def993a6",
+  residentialFacade: "1545324418-cc1a3fa10c00",
+  whiteGridFacade: "1479839672679-a46483c0e7c8",
+  stripedFacade: "1488972685288-c3fd157d7c7a",
+  fadedFacade: "1496307653780-42ee777d4833",
+  darkVolume: "1515263487990-61b07816b324",
+  glassCurtain: "1481026469463-66327c86e544",
+  timberExterior: "1600047509807-ba8f99d2cdde",
+  houseNight: "1600585154526-990dced4db0d",
+  houseAmongTrees: "1600607688969-a5bfcd646154",
+  villaLandscape: "1613490493576-7fde63acd811",
+  whiteVillaPool: "1613977257363-707ba9348227",
+  towerSky: "1494145904049-0dca59b4bbad",
+  brickBalconies: "1508450859948-4e04fabaa4ea",
+  apartmentBlock: "1574362848149-11496d93a7c7",
+
+  // Interiores
+  openLiving: "1600607687939-ce8a6c25118c",
+  warmLiving: "1600210492486-724fe5c67fb0",
+  sandInterior: "1618221195710-dd6b41faaea6",
+  whiteInterior: "1616486338812-3dadae4b4ace",
+  studyCorner: "1513694203232-719a280e022f",
+  livingRoom: "1505691938895-1758d7feb511",
+  openOffice: "1497366216548-37526070297c",
+  loftOffice: "1497366811353-6870744d04b2",
+  officeLounge: "1524758631624-e2822e304c36",
+  stairLight: "1502005229762-cf1b2da7c5d6",
+  whiteRoom: "1493809842364-78817add7ffb",
+  kitchenIsland: "1484154218962-a197022b5858",
+  yellowChair: "1586023492125-27b2c045efd7",
+  whiteKitchen: "1507089947368-19c1da9775ae",
+  livingView: "1503174971373-b1f69850bded",
+  timberDining: "1519643381401-22c77e60520e",
+  quietLiving: "1554995207-c18c203602cb",
+  glassInterior: "1600573472550-8090b5e0745e",
+  darkLiving: "1600121848594-d8644e57abab",
+  greenDining: "1617806118233-18e1de247200",
+  stoneBathroom: "1600566752355-35792bedcfea",
+  clayInterior: "1529408686214-b48b8532f72c",
+  timberStructure: "1517581177682-a085bb7ffb15",
+  darkOffice: "1504384308090-c894fdcc538d",
+  glassCorridor: "1462826303086-329426d1aef5",
+
+  // Processo
+  drawings: "1503387762-592deb58ef4e",
+
+  // Retratos
+  portraitHelena: "1544005313-94ddf0286df2",
+  portraitRafael: "1500648767791-00dcc994a43e",
+  portraitMarina: "1438761681033-6461ffad8d80",
+  portraitTomas: "1507003211169-0a1dd7228f2d",
+  portraitJulia: "1534528741775-53994a69daeb",
+  portraitAndre: "1472099645785-5658abf4ff4e",
+} as const
