@@ -46,6 +46,7 @@ export function Figure({
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
           decoding="async"
+          crossOrigin="anonymous"
           className={cn(
             "absolute inset-0 size-full object-cover",
             toneClass[photo.tone ?? "mono"],

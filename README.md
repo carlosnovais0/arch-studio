@@ -22,6 +22,27 @@ npm run dev        # servidor de desenvolvimento em http://localhost:5173
 | `npm run build`   | Verifica os tipos (`tsc -b`) e gera a versão de produção em `dist/` |
 | `npm run preview` | Serve a pasta `dist/` localmente para conferência      |
 | `npm run lint`    | Lint com oxlint (inclui regras de acessibilidade e proíbe `any`) |
+| `npm run generate-pwa-assets` | Gera os ícones do app (PNG e ICO) a partir de `public/favicon.svg` |
+
+## App instalável (PWA)
+
+O site é um Progressive Web App: pode ser instalado na tela inicial do celular ou no computador e abre em tela cheia, como um aplicativo.
+
+- **Android, Chrome e Edge:** o rodapé mostra o botão **Instalar app** sempre que o navegador permite a instalação. A opção também fica no menu do navegador.
+- **iPhone e iPad:** a Apple não permite um botão de instalação. O rodapé explica o caminho: Compartilhar → Adicionar à Tela de Início.
+- **Offline:** todas as páginas e textos ficam guardados no aparelho na primeira visita. As fotos são guardadas à medida que aparecem na tela (até 200 fotos, por 30 dias). Sem conexão, o formulário de contato avisa e mantém o que foi digitado.
+- **Atualizações:** quando uma nova versão é publicada, aparece o aviso "Nova versão disponível" com o botão **Atualizar**. Nada recarrega sem o visitante pedir.
+
+Detalhes técnicos: [vite-plugin-pwa](https://vite-pwa-org.netlify.app/) com Workbox, configurado em `vite.config.ts`. O manifest (nome, cores e ícones) e as regras de cache ficam no mesmo arquivo. Os ícones são gerados a partir de `public/favicon.svg` pela configuração em `pwa-assets.config.ts`.
+
+O service worker só existe no build de produção. Para testar localmente:
+
+```bash
+npm run build
+npm run preview    # http://localhost:4173
+```
+
+> A instalação exige HTTPS em produção (no `localhost` funciona sem HTTPS). Netlify, Vercel e GitHub Pages já usam HTTPS por padrão.
 
 ## Formulário de contato
 

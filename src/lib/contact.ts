@@ -36,6 +36,14 @@ export type ContactFormValues = z.infer<typeof contactSchema>
 
 const SIMULATED_DELAY_MS = 1200
 
+/** Lançado quando o aparelho está sem conexão (por exemplo, no app instalado e offline). */
+export class OfflineError extends Error {
+  constructor() {
+    super("Sem conexão com a internet.")
+    this.name = "OfflineError"
+  }
+}
+
 /**
  * Envia a mensagem para `VITE_CONTACT_ENDPOINT` (Formspree ou Web3Forms).
  * Sem endpoint configurado, simula o envio e registra os dados no console.
@@ -47,6 +55,10 @@ export async function sendContactMessage(values: ContactFormValues): Promise<voi
     await new Promise((resolve) => setTimeout(resolve, SIMULATED_DELAY_MS))
     console.info("[ARCH STUDIO] VITE_CONTACT_ENDPOINT não definido — envio simulado:", values)
     return
+  }
+
+  if (!navigator.onLine) {
+    throw new OfflineError()
   }
 
   const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY

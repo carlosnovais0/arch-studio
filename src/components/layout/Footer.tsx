@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 import { ArrowUp } from "lucide-react"
 import { Link } from "react-router"
 
+import { InstallApp } from "@/components/pwa/InstallApp"
 import { navItems, site } from "@/data/site"
 
 function FooterColumn({ title, children }: { title: string; children: ReactNode }) {
@@ -82,14 +83,17 @@ export function Footer() {
           <p className="eyebrow text-stone">
             © {YEAR} {site.name}. Todos os direitos reservados.
           </p>
-          <button
-            type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="eyebrow inline-flex cursor-pointer items-center gap-2 self-start text-stone transition-colors duration-500 hover:text-paper"
-          >
-            Voltar ao topo
-            <ArrowUp aria-hidden className="size-3.5 stroke-[1.25]" />
-          </button>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-10">
+            <InstallApp />
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="eyebrow inline-flex cursor-pointer items-center gap-2 self-start text-stone transition-colors duration-500 hover:text-paper"
+            >
+              Voltar ao topo
+              <ArrowUp aria-hidden className="size-3.5 stroke-[1.25]" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

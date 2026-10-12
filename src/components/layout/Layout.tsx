@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { useLocation, useOutlet } from "react-router"
 
+import { UpdatePrompt } from "@/components/pwa/UpdatePrompt"
 import { Toaster } from "@/components/ui/sonner"
 import { DURATION, EASE } from "@/lib/motion"
 import { Footer } from "./Footer"
@@ -45,6 +46,7 @@ export function Layout() {
 
       <Footer />
       <Toaster />
+      <UpdatePrompt />
     </>
   )
 }

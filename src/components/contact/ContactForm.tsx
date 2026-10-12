@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { site } from "@/data/site"
-import { type ContactFormValues, PROJECT_TYPES, contactSchema, sendContactMessage } from "@/lib/contact"
+import { type ContactFormValues, OfflineError, PROJECT_TYPES, contactSchema, sendContactMessage } from "@/lib/contact"
 import { errorId } from "./field-ids"
 import { FormField } from "./FormField"
 
@@ -47,9 +47,12 @@ export function ContactForm() {
       reset(DEFAULT_VALUES)
     } catch (error) {
       console.error(error)
-      toast.error("Não foi possível enviar.", {
+      toast.error(error instanceof OfflineError ? "Você está sem conexão." : "Não foi possível enviar.", {
         id: toastId,
-        description: `Tente novamente em instantes ou escreva para ${site.email}.`,
+        description:
+          error instanceof OfflineError
+            ? "Sua mensagem continua no formulário. Envie de novo quando a conexão voltar."
+            : `Tente novamente em instantes ou escreva para ${site.email}.`,
       })
       setStatus("error")
     }

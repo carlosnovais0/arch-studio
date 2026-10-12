@@ -30,6 +30,7 @@ export function Hero() {
           alt="Edifício branco de formas angulosas e escultóricas contra o céu"
           fetchPriority="high"
           decoding="async"
+          crossOrigin="anonymous"
           className="tone-mono size-full object-cover object-[60%_center]"
         />
       </motion.div>
